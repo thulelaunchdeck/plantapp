@@ -20,15 +20,11 @@ const Button = ({
 }) => {
   const buttonStyles = [
     styles.button,
-    shadow ? styles.shadow : {},
-    color && styles[color] ? styles[color] : {}, // predefined styles colors for backgroundColor
-    color && !styles[color] ? { backgroundColor: color } : {}, // custom backgroundColor
+    shadow && styles.shadow,
+    color && styles[color], // predefined styles colors for backgroundColor
+    color && !styles[color] && { backgroundColor: color }, // custom backgroundColor
+    style
   ];
-  if (Array.isArray(style)) {
-    buttonStyles.push(...style);
-  } else if (style) {
-    buttonStyles.push(style);
-  }
 
   if (gradient) {
     return (

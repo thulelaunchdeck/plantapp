@@ -117,29 +117,26 @@ const Block = ({
   
   const blockStyles = [
     styles.block,
-    flex ? { flex } : { flex: 0},
-    row ? styles.row : {},
-    column ? styles.column : {},
-    center ? styles.center : {},
-    middle ? styles.middle : {},
-    left ? styles.left : {},
-    right ? styles.right : {},
-    top ? styles.top : {},
-    bottom ? styles.bottom : {},
-    margin ? { ...handleMargins() } : {},
-    padding ? { ...handlePaddings() } : {},
-    card ? styles.card : {},
-    shadow ? styles.shadow : {},
-    space ? { justifyContent: `space-${space}` } : {},
-    wrap ? { flexWrap: "wrap" } : {},
-    color && styles[color] ? styles[color] : { backgroundColor: color },
-
+    flex && { flex },
+    flex === false && { flex: 0 }, // reset / disable flex
+    row && styles.row,
+    column && styles.column,
+    center && styles.center,
+    middle && styles.middle,
+    left && styles.left,
+    right && styles.right,
+    top && styles.top,
+    bottom && styles.bottom,
+    margin && { ...handleMargins() },
+    padding && { ...handlePaddings() },
+    card && styles.card,
+    shadow && styles.shadow,
+    space && { justifyContent: `space-${space}` },
+    wrap && { flexWrap: "wrap" },
+    color && styles[color], // predefined styles colors for backgroundColor
+    color && !styles[color] && { backgroundColor: color }, // custom backgroundColor
+    style // rewrite predefined styles
   ];
-  if (Array.isArray(style)) {
-    blockStyles.push(...style);
-  } else if (style) {
-    blockStyles.push(style);
-  }
 
   if (animated) {
     return (
