@@ -31,7 +31,6 @@ const Button = ({
   }
 
   if (gradient) {
-    debugger
     return (
       <TouchableOpacity
         style={buttonStyles}
@@ -50,7 +49,7 @@ const Button = ({
       </TouchableOpacity>
     );
   }
-debugger
+
   return (
     <TouchableOpacity
       style={buttonStyles}

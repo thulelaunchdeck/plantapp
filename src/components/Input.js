@@ -89,7 +89,7 @@ const Input = ({ label, error, secure, rightLabel, rightStyle, onRightPress, ema
         {...rest}
       />
       {renderToggle()}
-      {/* {renderRight()} */}
+      {renderRight()}
     </Block>
   );
 }

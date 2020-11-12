@@ -140,7 +140,7 @@ const Block = ({
   } else if (style) {
     blockStyles.push(style);
   }
-// debugger
+
   if (animated) {
     return (
       <Animated.View style={blockStyles} {...rest}>

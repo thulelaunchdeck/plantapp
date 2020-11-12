@@ -45,7 +45,7 @@ const Explore = (props) => {
           }
           rightStyle={styles.searchRight}
           rightLabel={
-            <Icon.FontAwesome
+            <Icon
               name={isEditing ? "close" : "search"}
               size={theme.sizes.base / 1.6}
               color={theme.colors.gray2}

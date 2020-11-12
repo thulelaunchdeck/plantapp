@@ -16,7 +16,8 @@ const MainNavigator = () => {
     <Stack.Navigator screenOptions={{
       // headerTintColor: 'white',
       headerTitle: null,
-      headerTransparent: true,
+      // headerTransparent: true,
+      headerStyle: {shadowColor: 'transparent'},
       headerBackImage: () => (<Image source={require("../assets/icons/back.png")} style={{marginLeft: theme.sizes.base*2}} />),
       headerBackTitle: ' ',
       cardStyle: {
